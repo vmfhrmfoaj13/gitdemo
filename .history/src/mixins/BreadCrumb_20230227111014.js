@@ -1,0 +1,20 @@
+export default{
+    data(){
+        return{
+           breadList:[]
+        }
+     },
+     created(){
+        this.getBreakCrumb()
+     },
+     watch:{
+        $route(){
+           this.getBreakCrumb()
+        }
+     },
+     methods:{
+        getBreakCrumb(){
+           this.breadList=this.$route.meta.bread||[]
+        }
+     }
+}

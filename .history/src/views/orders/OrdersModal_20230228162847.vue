@@ -1,0 +1,89 @@
+<template>
+  <div>
+        <el-dialog
+            title="提示"
+            :visible="visible"
+            width="30%"
+            :before-close="close"
+            >
+            <el-row :gutter="28">
+                <el-from :model="ruleForm">
+                     <el-col :span="12">
+                        <el-from-item label="客户名称" prop="name">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="起始城市" prop="start">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="目的城市" prop="end">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="货物名称" prop="cargo">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="件数" prop="count">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                         <el-col :span="12">
+                        <el-from-item label="单位" prop="unit">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="运费" prop="price">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="订单来源" prop="from">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                      <el-col :span="12">
+                        <el-from-item label="是否支付" prop="pay">
+                            <el-input v-model="ruleForm.name"></el-input>
+                        </el-from-item>
+                     </el-col>
+                     </el-col>
+                </el-from>
+            </el-row>
+
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="close">取 消</el-button>
+                <el-button type="primary">保存</el-button>
+                </span>
+        </el-dialog>
+
+  </div>
+</template>
+
+<script>
+export default {
+    props:["visible","hide"],
+    data(){
+        return{
+            ruleForm:{
+            name:""//客户名称
+        }
+    }
+        
+    },
+    methods:{
+        close(){
+            this.$emit("hide")
+        }
+    }
+}
+</script>
+
+<style>
+
+</style>

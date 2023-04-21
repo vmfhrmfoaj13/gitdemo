@@ -1,0 +1,35 @@
+<template>
+   <div>
+   <el-breadcrumb separator="/">
+   <el-breadcrumb-item>
+  <el-breadcrumb-item v-for="(item,index) in breadList" :key="index">{{item}}</el-breadcrumb-item>
+   </el-breadcrumb-item>
+</el-breadcrumb>
+   <el-card>
+         <el-cow>
+            <el-col :span="6">
+                  <el-input placeholder="请输入内容" v-model="searvhValue" class="input-with-select">
+                     <el-button slot="append" icon="el-icon-search"></el-button>
+                  </el-input>
+            </el-col>
+         </el-cow>
+   </el-card>
+   </div>
+</template>
+
+<script>
+import breadCrumb from "@/mixins/breadCrumb"
+export default { 
+      mixins:[breadCrumb],
+      data(){
+         return{
+            searvhValue:""
+         }
+      }
+};
+
+</script>
+
+<style>
+
+</style>

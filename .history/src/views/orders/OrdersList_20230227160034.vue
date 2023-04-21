@@ -1,0 +1,41 @@
+<template>
+   <div>
+   <el-breadcrumb separator="/">   
+  <el-breadcrumb-item v-for="(item,index) in breadList" :key="index">{{item}}</el-breadcrumb-item>
+</el-breadcrumb>
+      <el-card class="mt">
+         <el-row> 
+            <el-col :span="6">
+                  <el-input placeholder="请输入内容" v-model="searchValue" class="input-with-select">
+                     <el-button slot="append" icon="el-icon-search"></el-button>
+                  </el-input>
+            </el-col>
+            <el-col :span="6" :offset="12" class="operate">
+               <el-button type="primary">新建订单</el-button>
+               <el-button disabled>审核</el-button>
+               <el-button disabled>修改</el-button>
+               <el-button disabled>作废</el-button>
+            </el-col>
+         </el-row>
+   </el-card>
+   <el-card class="mt"></el-card>
+   </div>
+</template>
+
+<script>
+import breadCrumb from "@/mixins/breadCrumb"
+export default { 
+      mixins:[breadCrumb],
+      data(){
+         return{
+            searchValue:""
+         }
+      }
+};
+
+</script>
+
+<style>
+.operate{text-align: right;}
+
+</style>
